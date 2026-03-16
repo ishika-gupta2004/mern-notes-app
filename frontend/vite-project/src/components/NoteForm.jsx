@@ -3,7 +3,7 @@ import API from "../services/api";
 
 export const NoteForm = () => {
     const [title, setTitle] = useState("");
-    const [password, setPassword] = useState("");
+    const [content, setContent] = useState("");
 
     const addNote = async () => {
         const token = localStorage.getItem("token");
