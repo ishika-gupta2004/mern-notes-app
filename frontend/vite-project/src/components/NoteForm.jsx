@@ -1,7 +1,7 @@
 import { useState } from "react";
 import API from "../services/api";
 
-export const NoteForm = () => {
+export const NoteForm = ({refreshNotes}) => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
@@ -15,6 +15,7 @@ export const NoteForm = () => {
             { headers: { Authorization: `Bearer ${token}` } }
         )
         alert("Notes Added")
+        refreshNotes();
     }
 
     return (

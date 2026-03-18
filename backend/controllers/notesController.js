@@ -58,3 +58,13 @@ exports.deleteNote = async (req, res) => {
     }
 
 }
+
+exports.updateNote = async (req,resp) => {
+    const {title,content} = req.body;
+    const note = await Note.findByIdAndUpdate(
+        req.params.id,
+        {title,content},
+        {new:true}
+    )
+    resp.json(note);
+}
