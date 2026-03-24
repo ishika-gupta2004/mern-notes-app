@@ -34,6 +34,7 @@ exports.getNotes = async (req, res) => {
         })
 
         res.json(notes)
+        
 
     } catch (err) {
 

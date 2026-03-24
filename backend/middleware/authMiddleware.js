@@ -14,7 +14,7 @@ const authMiddleWare = (req, resp, next) => {
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
-        req.user = decoded.id
+        req.user = decoded.id;
 
         next()
 

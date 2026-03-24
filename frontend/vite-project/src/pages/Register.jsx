@@ -26,24 +26,28 @@ export const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-500 to-indigo-600">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500">
 
             {/* Card */}
-            <div className="bg-white p-8 rounded-2xl shadow-2xl w-[350px]">
+            <div className="bg-white p-10 rounded-3xl shadow-2xl w-[90%] max-w-md">
 
                 {/* Heading */}
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+                <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
                     Create Account 🚀
                 </h2>
+                <p className="text-center text-gray-500 mb-6">
+                    Start your journey with Notes App
+                </p>
 
                 {/* Form */}
-                <form onSubmit={registerUser} className="flex flex-col gap-4">
+                <form onSubmit={registerUser} className="flex flex-col gap-5" autoComplete="off">
 
                     {/* Name */}
                     <input
                         type="text"
                         placeholder="Enter your name"
-                        className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                        autoComplete="off"
+                        className="px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400"
                         onChange={(e) => setName(e.target.value)}
                         required
                     />
@@ -51,8 +55,9 @@ export const Register = () => {
                     {/* Email */}
                     <input
                         type="email"
+                        autoComplete="off"
                         placeholder="Enter your email"
-                        className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                        className="px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400"
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
@@ -60,8 +65,9 @@ export const Register = () => {
                     {/* Password */}
                     <input
                         type="password"
+                        autoComplete="new-password"
                         placeholder="Enter your password"
-                        className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                        className="px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400"
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
@@ -69,7 +75,7 @@ export const Register = () => {
                     {/* Button */}
                     <button
                         type="submit"
-                        className="bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition duration-300"
+                        className="bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-xl font-semibold hover:scale-105 transition duration-300"
                     >
                         Register
                     </button>

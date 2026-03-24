@@ -118,3 +118,12 @@ padding:8px;
 margin:5px;
 padding:8px;
 }
+
+.working-girl{
+  background-image: url("../assets/working-girl.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20vw;
+  height: 30vh;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import API from "../services/api";
+import "../styles/style.css"
 
 export const NoteForm = ({ refreshNotes }) => {
     const [title, setTitle] = useState("");
@@ -26,6 +27,7 @@ export const NoteForm = ({ refreshNotes }) => {
     };
 
     return (
+        // <div></div>
         <div className="flex flex-col gap-3">
 
             {/* Title */}
@@ -52,6 +54,8 @@ export const NoteForm = ({ refreshNotes }) => {
             >
                 Add Note
             </button>
+
+            <div className="working-girl"></div>
 
         </div>
     );

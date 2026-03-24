@@ -50,10 +50,16 @@ exports.login = async (req, resp) => {
             { expiresIn: "1d" }
         )
 
-        resp.json({ token })
+        resp.json({ token,
+            user:{
+                name:user.name,
+                email:user.email,
+            }
+         })
         // console.log(token)
 
     } catch (err) {
+    console.log("ERROR 👉", err.response?.data || err.message);
 
         resp.status(500).json(err)
 
