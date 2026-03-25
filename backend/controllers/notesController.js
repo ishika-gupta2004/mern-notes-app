@@ -31,10 +31,10 @@ exports.getNotes = async (req, res) => {
 
         const notes = await Note.find({
             user: req.user
-        })
+        }).sort({isPinned: -1, createdAt: -1})
 
         res.json(notes)
-        
+
 
     } catch (err) {
 
@@ -60,12 +60,24 @@ exports.deleteNote = async (req, res) => {
 
 }
 
-exports.updateNote = async (req,resp) => {
-    const {title,content} = req.body;
+exports.updateNote = async (req, resp) => {
+    const { title, content } = req.body;
     const note = await Note.findByIdAndUpdate(
         req.params.id,
-        {title,content},
-        {new:true}
+        { title, content },
+        { new: true }
     )
     resp.json(note);
+}
+
+exports.togglePin = async (req, resp) => {
+    try {
+        const note = await Note.findById(req.params.id);
+        note.inPinned = !note.isPinned;
+        await note.save();
+        resp.json(note)
+    } catch (err) {
+        resp.status(500).json(err);
+
+    }
 }

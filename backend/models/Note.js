@@ -11,6 +11,10 @@ const noteSchema = new mongoose.Schema({
     content:{
         type:String
     },
+    isPinned:{
+        type:Boolean,
+        default:false
+    },
     tags:[String]
 },{timestamps:true})
 

@@ -10,6 +10,10 @@ export const NoteForm = ({ refreshNotes }) => {
         try {
             const token = localStorage.getItem("token");
 
+            if (!title.trim() || !content.trim()) {
+                return;
+            }
+
             await API.post(
                 "/notes",
                 { title, content },
@@ -50,12 +54,12 @@ export const NoteForm = ({ refreshNotes }) => {
             {/* Button */}
             <button
                 onClick={addNote}
-                className="bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition"
+                className="bg-indigo-500 cursor-pointer text-white py-2 rounded-lg hover:bg-indigo-600 transition"
             >
                 Add Note
             </button>
 
-            <div className="working-girl"></div>
+            <div className="lg:working-girl"></div>
 
         </div>
     );
