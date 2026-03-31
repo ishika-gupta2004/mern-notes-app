@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FiPower } from "react-icons/fi";
+
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = ({ selectedDate, setSelectedDate, query, setQuery }) => {
@@ -17,15 +19,16 @@ export const Navbar = ({ selectedDate, setSelectedDate, query, setQuery }) => {
   }, []);
 
   return (
-    <div className="w-full h-[10vh] bg-white  flex justify-between items-center lg:px-8 shadow-sm">
+    <div className="w-full h-[10vh] bg-white flex justify-between items-center px-2 lg:px-8 shadow-sm">
 
       {/* LEFT LOGO */}
       <h1 className="p-2 lg:text-2xl font-bold tracking-wide text-gray-800 flex items-center gap-2">
-        <span className="w-19 📝 lg:w-29 mr-2">My Notes</span>
+        <span className="hidden lg:block lg:w-49 mr-2">📒 Notes App</span>
+        <span className="block lg:hidden w-19 📝 lg:w-49 mr-2">📒 Notes</span>
       </h1>
 
       {/* CENTER CONTROLS */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 pr-2">
 
         {/* Search */}
         <input
@@ -74,7 +77,8 @@ export const Navbar = ({ selectedDate, setSelectedDate, query, setQuery }) => {
           onClick={logout}
           className="lg:hidden w-6 h-6 flex items-center justify-center rounded-full bg-red-500 text-white shadow-md"
         >
-          ⏻
+            <FiPower />
+
         </button>
       </div>
     </div>

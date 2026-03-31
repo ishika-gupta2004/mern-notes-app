@@ -1,6 +1,8 @@
 import API from "../services/api";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import bg from "../assets/loginbg.png";
+
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -26,7 +28,12 @@ export const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500">
+        <div className="min-h-screen flex items-center justify-center"style={{
+                        backgroundImage: `url(${bg})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat"
+                    }}>
 
             {/* Card */}
             <div className="bg-white p-10 rounded-3xl shadow-2xl w-[90%] max-w-md">

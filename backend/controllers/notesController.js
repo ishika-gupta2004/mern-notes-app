@@ -73,7 +73,7 @@ exports.updateNote = async (req, resp) => {
 exports.togglePin = async (req, resp) => {
     try {
         const note = await Note.findById(req.params.id);
-        note.inPinned = !note.isPinned;
+        note.isPinned = !note.isPinned;
         await note.save();
         resp.json(note)
     } catch (err) {

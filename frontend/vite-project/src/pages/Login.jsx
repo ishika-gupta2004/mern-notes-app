@@ -2,6 +2,8 @@ import { useState } from "react";
 import API from "../services/api";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import bg from "../assets/loginbg.png";
+
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -33,7 +35,13 @@ export const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+        <div className="min-h-screen w-full flex items-center justify-center"
+            style={{
+                backgroundImage: `url(${bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat"
+            }}>
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -47,6 +55,8 @@ export const Login = () => {
                 <p className="text-center text-gray-500 mb-6">
                     Login to continue your journey
                 </p>
+
+
 
                 {/* Form */}
                 <form
